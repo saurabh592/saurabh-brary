@@ -7,9 +7,9 @@
 
 const express = require('express')
 // require ('.env'). config ();
-const dotenv = require('dotenv')
-dotenv.config({path:__dirname+'/.env'});
-const source = process.env.DATABASE_URL;
+// const dotenv = require('dotenv')
+// dotenv.config({path:__dirname+'/.env'});
+// const source = process.env.DATABASE_URL;
 const app = express();
 const expressLayouts = require('express-ejs-layouts')
 const indexRoute = require('./routes/index')
