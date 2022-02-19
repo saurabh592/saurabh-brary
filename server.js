@@ -1,9 +1,9 @@
 
 // if(process.env.NODE_ENV !== 'production'){
+    
 //     require('dotenv').config()
 // }
-const dotenv = require('dotenv'); 
-dotenv.config()
+require('dotenv').config();
 const express = require('express')
 const app = express();
 const expressLayouts = require('express-ejs-layouts')
