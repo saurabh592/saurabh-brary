@@ -7,9 +7,9 @@
 
 const express = require('express')
 // require ('.env'). config ();
-// const dotenv = require('dotenv')
-// dotenv.config({path:__dirname+'/.env'});
-// const source = process.env.DATABASE_URL;
+const dotenv = require('dotenv')
+dotenv.config({path:__dirname+'/.env'});
+const source = process.env.DATABASE_URL;
 const app = express();
 const expressLayouts = require('express-ejs-layouts')
 const indexRoute = require('./routes/index')
@@ -22,9 +22,9 @@ app.use(express.static('public'))
 
 const mongoose = require('mongoose');
 const { options } = require('./routes/index');
-// mongoose.connect(source, { useNewUrlParser: true})
-// console.log(source)
-mongoose.connect("mongodb://localhost/mybrary", { useNewUrlParser: true});
+mongoose.connect(source, { useNewUrlParser: true})
+console.log(source)
+// mongoose.connect("mongodb://localhost/mybrary", { useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error',error => console.error(error));
 db.once('open',() =>console.log('you are connected to database'))
