@@ -68,7 +68,8 @@ async function renderNewPage(res, book, hasError = false) {
 
 function saveCover(book, coverEncoded) {
   if (coverEncoded == null) return
-  const cover = JSON.parse(coverEncoded)
+  const cover1 = JSON.stringify(coverEncoded)
+  const cover = JSON.parse(cover1)
   if (cover != null && imageMimeTypes.includes(cover.type)) {
     book.coverImage = new Buffer.from(cover.data, 'base64')
     book.coverImageType = cover.type
